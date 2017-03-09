@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-# mytesting
-Simple Unite Tests Tasks
-=======
-# testing-with-mocks
-Testing with Mocks
->>>>>>> c143909627690f0d6ae82d1bdea3b3f3649559f9
+# Testing-With-Mocks
+Tasks that are applying Test Driven Development with Mocks. 
+
+## Author
+* **Alexander Vladimirov** - *Initial work* - [AlexanderVladimirov9090](https://github.com/AlexanderVladimirov9090)
