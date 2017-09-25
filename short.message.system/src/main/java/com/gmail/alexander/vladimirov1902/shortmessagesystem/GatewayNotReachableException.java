@@ -1,10 +1,9 @@
 package com.gmail.alexander.vladimirov1902.shortmessagesystem;
 
 /**
- * Created by clouway on 06.07.16.
- *
  * @author alexandervladimirov1902@gmail.com
  *         (Alexander Vladimirov)
+ *         This custom exception class is thown when the gateway does not respond for any reason.
  */
 class GatewayNotReachableException extends Exception {
   public GatewayNotReachableException() {

@@ -3,6 +3,7 @@ package com.gmail.alexander.vladimirov1902.endpointfilter;
 /**
  * @author alexandervladimirov1902@gmail.com
  * (Alexander Vladimirov)
+ * Concrete implementation of Endpoint interface.
  */
 class StartsWithKeyword implements Endpoint {
     private final String keyWord;
@@ -11,6 +12,13 @@ class StartsWithKeyword implements Endpoint {
         this.keyWord = keyWord;
     }
 
+    /**
+     * Used to check if string matches the url.
+     * @param url that is checked.
+     * @return true if matches any url.
+     * @throws EmptyURLExceptions if empty string is given throw this exception.
+     * @throws EmptyKeywordException if empty keyword is given throw this exception.
+     */
     @Override
     public boolean matches(String url) throws EmptyURLExceptions, EmptyKeywordException {
 
@@ -22,9 +30,6 @@ class StartsWithKeyword implements Endpoint {
             throw new EmptyKeywordException();
         }
 
-        if (url.startsWith(keyWord)) {
-            return true;
-        }
-        return false;
+        return url.startsWith(keyWord);
     }
 }

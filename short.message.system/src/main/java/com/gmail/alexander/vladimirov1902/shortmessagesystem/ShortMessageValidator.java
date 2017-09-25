@@ -1,13 +1,16 @@
 package com.gmail.alexander.vladimirov1902.shortmessagesystem;
 
 /**
- * Created by clouway on 06.07.16.
- *
  * @author alexandervladimirov1902@gmail.com
  *         (Alexander Vladimirov)
+ *         This concrete implementation of SMSValidator validates message that is trying to be send.
  */
 class ShortMessageValidator implements SMSValidator  {
-
+  /**
+   * Check if all parts of the message are valid.
+   * @param shortMessage tested message before send.
+   * @return true when all of the parts of the message are valid.
+   */
   @Override
   public boolean checkIsValidMessage(ShortMessage shortMessage) {
     if (isEmpty(shortMessage)) {
@@ -22,6 +25,11 @@ class ShortMessageValidator implements SMSValidator  {
     return true;
   }
 
+  /**
+   * Checks if title and content Exceeds length.
+   * @param shortMessage tested message.
+   * @return true if title and content are under number of characters.
+   */
   private boolean titleAndContentExceeded(ShortMessage shortMessage) {
     if (shortMessage.getTitle().length() > 50) {
       return true;
@@ -32,6 +40,11 @@ class ShortMessageValidator implements SMSValidator  {
     return false;
   }
 
+  /**
+   * Check if the number of recipient is consistent.
+   * @param shortMessage tested message.
+   * @return true if number of the recipient is valid.
+   */
   private boolean checkConsistencyOfRecipient(ShortMessage shortMessage) {
     if (!shortMessage.getRecipient().startsWith("08")) {
       return true;
@@ -46,10 +59,12 @@ class ShortMessageValidator implements SMSValidator  {
 
   }
 
+  /**
+   * Test if any of the parts of the message are empty.
+   * @param shortMessage tested message.
+   * @return true if any of the field are empty.
+   */
   private boolean isEmpty(ShortMessage shortMessage) {
-    if (shortMessage.getTitle().isEmpty() || shortMessage.getContent().isEmpty() || shortMessage.getRecipient().isEmpty()) {
-      return true;
-    }
-    return false;
+    return shortMessage.getTitle().isEmpty() || shortMessage.getContent().isEmpty() || shortMessage.getRecipient().isEmpty();
   }
 }
