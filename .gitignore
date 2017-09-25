@@ -20,3 +20,10 @@
 hs_err_pid*
 lib/
 production/
+/ShortMessageSystemScenarios.txt
+/.idea/
+/EndPointScenario
+/gradlew
+/gradle/
+/.gradle/
+/gradlew.bat
